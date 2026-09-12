@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BentoMob - Mobilidade Urbana Integrada (TP2)</title>
+
+    <!-- Tipografia Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Folha de Estilos Externa -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="topo">
+
+    <!-- CABEÇALHO GLOBAL -->
+    <header class="header-main">
+        <div class="header-container">
+            <!-- Logo na Esquerda -->
+            <div class="logo">
+                <a href="index.html">Bento<span>Mob</span></a>
+            </div>
+            
+            <!-- Controle do Menu Hambúrguer -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menu de navegação">
+
+            <!-- Links de Navegação (Recolhem no mobile) -->
+            <nav class="nav-menu" aria-label="Navegação Principal">
+                <ul class="nav-list">
+                    <li><a href="#linhas" class="nav-link">Linhas</a></li>
+                    <li><a href="#rotas" class="nav-link">Rotas</a></li>
+                    <li><a href="#passagens" class="nav-link">Passagens</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- Ações da Direita: Menu Hambúrguer + Ícone de Perfil Fixo -->
+            <div class="header-actions">
+                <label for="menu-toggle" class="menu-icon" aria-label="Menu">
+                    <span class="nav-icon"></span>
+                </label>
+
+                <a href="#perfil" class="btn-icon" title="Meu Perfil" aria-label="Acessar Perfil">
+                    <svg class="icon-perfil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-container">
+
+        <!-- 1. HERO COM BUSCA CENTRALIZADA -->
+        <section class="card hero-section" id="busca">
+            <h1 class="hero-title">Qual seu destino de hoje?</h1>
+            <p class="hero-subtitle">Consulte horários e rotas unificadas da Viação Santo Antônio e Bento Transportes.</p>
+            
+            <form class="search-form" onsubmit="event.preventDefault();">
+                <input type="text" class="input-field search-input" placeholder="Digite o bairro, linha ou destino..." aria-label="Buscar linha ou destino">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+        </section>
+
+        <!-- 2. ALERTA OPERACIONAL -->
+        <section class="alert-box" aria-live="polite">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-text">
+                <h3 class="alert-title">Alerta Operacional em Tempo Real</h3>
+                <p>Linhas com trajeto pelo Bairro São Roque operam com desvio momentâneo na Rua Coberta devido a obras na via.</p>
+            </div>
+        </section>
+
+        <!-- 3. TABELA DE HORÁRIOS INTEGRADA -->
+        <section class="card schedule-section" id="linhas">
+            <div class="section-header">
+                <h2 class="section-title">Próximas Saídas Integradas</h2>
+                <span class="badge-status">Horário Oficial</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Itinerário</th>
+                            <th>Operadora</th>
+                            <th>Saída Prevista</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>São Roque / Centro</strong> via Borgo</td>
+                            <td><span class="tag tag-santo-antonio">Santo Antônio</span></td>
+                            <td>12:40</td>
+                            <td><span class="status-indicator status-ok">No Horário</span></td>
+                            <td><a href="#contato" class="table-link">Reportar</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Universitário / Centro</strong> via Botafogo</td>
+                            <td><span class="tag tag-bento-transportes">Bento Transportes</span></td>
+                            <td>12:55</td>
+                            <td><span class="status-indicator status-ok">No Horário</span></td>
+                            <td><a href="#contato" class="table-link">Reportar</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cohab / Licorsul</strong> via Planalto</td>
+                            <td><span class="tag tag-santo-antonio">Santo Antônio</span></td>
+                            <td>13:10</td>
+                            <td><span class="status-indicator status-delay">Atraso 5 min</span></td>
+                            <td><a href="#contato" class="table-link">Reportar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. SEÇÃO DE ROTAS E MÍDIA LOCAL -->
+        <section class="card media-section" id="rotas">
+            <h2 class="section-title">Cobertura das Rotas Municipais</h2>
+            <p class="section-description">Centralizando o transporte público entre os polos industriais, residenciais e turísticos de Bento Gonçalves.</p>
+            <div class="media-container">
+                <img src="img/onibus-bento.jpg" alt="Transporte público coletivo em operação em Bento Gonçalves" class="responsive-img">
+            </div>
+        </section>
+
+        <!-- 5. SEÇÃO DE PASSAGENS E RECARGA COM LOGOS -->
+        <section class="card ticket-section" id="passagens">
+            <h2 class="section-title">Passagens e Recarga de Cartão</h2>
+            <p class="section-description">Acesse diretamente os canais oficiais de compra de bilhetes e recarga do cartão de transporte municipal.</p>
+
+            <div class="ticket-cards-container">
+                <!-- Card Santo Antônio -->
+                <div class="ticket-operator-card sto-card">
+                    <div class="operator-header">
+                        <img src="img/logo-santo-antonio.png" alt="Logo Viação Santo Antônio" class="operator-logo">
+                        <span class="tag tag-santo-antonio">Santo Antônio</span>
+                    </div>
+                    <h3>Cartão Santo Antônio</h3>
+                    <p>Emissão de vale-transporte, passe estudantil e compra de passagens interdistritais na matriz e postos credenciados.</p>
+                    <a href="https://www.transportesantoantonio.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-operator btn-sto">Acessar Santo Antônio ↗</a>
+                </div>
+
+                <!-- Card Bento Transportes -->
+                <div class="ticket-operator-card bento-card">
+                    <div class="operator-header">
+                        <img src="img/logo-bento-transportes.png" alt="Logo Bento Transportes" class="operator-logo">
+                        <span class="tag tag-bento-transportes">Bento Transportes</span>
+                    </div>
+                    <h3>Super APP BENTO & Bilhetagem</h3>
+                    <p>Compra digital de passagens, recarga do cartão transporte urbano e itinerários rodoviários municipais.</p>
+                    <a href="https://www.bentotransportes.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-operator btn-bento">Acessar Bento Transportes ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FORMULÁRIO DE CONTATO -->
+        <section class="card form-section" id="contato">
+            <h2 class="section-title">Fale Conosco / Suporte Municipal</h2>
+            <p class="section-description">Envie dúvidas sobre itinerários ou reporte problemas com as linhas municipais.</p>
+
+            <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" class="input-field" placeholder="Digite seu nome..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" name="email" class="input-field" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="empresa" class="form-label">Operadora Relacionada</label>
+                        <select id="empresa" name="empresa" class="input-field select-field" required>
+                            <option value="">Selecione uma empresa...</option>
+                            <option value="santo-antonio">Viação Santo Antônio</option>
+                            <option value="bento-transportes">Bento Transportes</option>
+                            <option value="ambas">Ambas / Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto" class="form-label">Motivo</label>
+                        <select id="assunto" name="assunto" class="input-field select-field" required>
+                            <option value="">Selecione o motivo...</option>
+                            <option value="duvida">Dúvida sobre Horário / Linha</option>
+                            <option value="atraso">Atraso ou Ônibus não passou</option>
+                            <option value="sugestao">Sugestão de Rota</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem" class="form-label">Mensagem ou Descrição da Ocorrência</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" class="input-field textarea-field" placeholder="Detalhe o local, horário e sua dúvida..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Enviar Mensagem</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="footer-main">
+        <p class="footer-copy">Centralizando a Mobilidade Urbana Municipal.</p>
+    </footer>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <a href="#topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="back-to-top" title="Voltar ao início" aria-label="Voltar ao início">↑</a>
+
+</body>
+</html>
