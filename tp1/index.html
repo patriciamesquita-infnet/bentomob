@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BentoMob - Mobilidade Urbana Integrada</title>
+
+    <!-- Fonte moderna Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS INTERNO -->
+    <style>
+        /* RESET E CORES GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            /* Fundo suave com tom de uva clarinho, tirando o aspecto chapado branco */
+            background-color: #f3ebf2;
+            color: #2b232a;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* CABEÇALHO COM IDENTIDADE FORTE */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #581845;
+            padding: 1.2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 18px rgba(88, 24, 69, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #581845;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a3e47;
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #7b1e58;
+        }
+
+        .btn-perfil {
+            background-color: #f2e9f0;
+            padding: 0.6rem 0.8rem;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background 0.2s;
+        }
+
+        .btn-perfil:hover {
+            background-color: #e5d3e2;
+        }
+
+        /* ÁREA PRINCIPAL */
+        main {
+            flex: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            width: 100%;
+        }
+
+        /* CARD DE BUSCA HERO */
+        .hero-section {
+            text-align: center;
+            padding: 3.5rem 2rem;
+            background-color: #ffffff;
+            border-radius: 18px;
+            border-top: 6px solid #581845;
+            box-shadow: 0 8px 24px rgba(88, 24, 69, 0.09);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-section h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #581845;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 1.1rem 1.8rem;
+            font-size: 1rem;
+            background-color: #faf5f9;
+            border: 2px solid #d4c2d0;
+            border-radius: 40px;
+            outline: none;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .search-container input:focus {
+            background-color: #ffffff;
+            border-color: #7b1e58;
+            box-shadow: 0 0 0 4px rgba(123, 30, 88, 0.12);
+        }
+
+        .search-container button {
+            position: absolute;
+            right: 8px;
+            top: 7px;
+            bottom: 7px;
+            background-color: #7b1e58;
+            color: #ffffff;
+            border: none;
+            padding: 0 1.8rem;
+            border-radius: 35px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .search-container button:hover {
+            background-color: #581845;
+        }
+
+        /* ALERTA VISUAL */
+        .alerts-section {
+            background-color: #fff4e6;
+            border-left: 6px solid #fd7e14;
+            padding: 1.2rem 1.6rem;
+            border-radius: 8px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px rgba(253, 126, 20, 0.08);
+        }
+
+        .alerts-section h3 {
+            font-size: 1.1rem;
+            color: #d9480f;
+            margin-bottom: 0.2rem;
+        }
+
+        .alerts-section p {
+            font-size: 0.95rem;
+            color: #7a2700;
+        }
+
+        /* TABELA DE PRÓXIMAS SAÍDAS */
+        .schedules-container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 18px;
+            border-top: 6px solid #7b1e58;
+            box-shadow: 0 8px 24px rgba(88, 24, 69, 0.09);
+            margin-bottom: 2.5rem;
+        }
+
+        .schedules-container h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #581845;
+            margin-bottom: 1.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1.1rem;
+            text-align: left;
+            border-bottom: 1px solid #f1e6ef;
+        }
+
+        th {
+            background-color: #f8edf6;
+            color: #581845;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .tag-santo-antonio {
+            background-color: #e6fcf5;
+            color: #0ca678;
+        }
+
+        .tag-bento-transportes {
+            background-color: #e7f5ff;
+            color: #1c7ed6;
+        }
+
+        /* CARD DE MÍDIA */
+        .media-section {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 18px;
+            border-top: 6px solid #581845;
+            box-shadow: 0 8px 24px rgba(88, 24, 69, 0.09);
+            text-align: center;
+        }
+
+        .media-section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #581845;
+            margin-bottom: 0.4rem;
+        }
+
+        .media-section p {
+            color: #6a5a67;
+            margin-bottom: 1.8rem;
+        }
+
+        .media-section img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+
+        /* RODAPÉ ELEGANTE */
+        footer {
+            background-color: #380b2b;
+            color: #f7ebf5;
+            padding: 2.5rem 1.5rem;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+        }
+
+        /* BOTÃO VOLTAR AO TOPO */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #7b1e58;
+            color: #ffffff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            box-shadow: 0 6px 16px rgba(88, 24, 69, 0.35);
+            transition: transform 0.2s, background 0.2s;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background-color: #581845;
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="topo">
+        <div class="logo">
+            <a href="index.html">BentoMob</a>
+        </div>
+        <nav aria-label="Navegação Principal">
+            <ul>
+                <li><a href="#linhas">Linhas</a></li>
+                <li><a href="#rotas">Rotas</a></li>
+                <li><a href="#passagens">Passagens</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#perfil" class="btn-perfil" title="Meu Perfil" aria-label="Acessar Perfil">👤</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Qual seu destino de hoje?</h1>
+            <form class="search-container" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="Digite o bairro ou linha de interesse..." aria-label="Destino">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <section class="alerts-section">
+            <h3>⚠️ Alerta Operacional</h3>
+            <p>Linhas via Bairro São Roque operando com desvios na Rua Coberta devido a manutenções.</p>
+        </section>
+
+        <section class="schedules-container" id="linhas">
+            <h2>Próximas Saídas Integradas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Itinerário</th>
+                        <th>Operadora</th>
+                        <th>Saída Prevista</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>São Roque / Centro</strong> via Borgo</td>
+                        <td><span class="tag tag-santo-antonio">Viação Santo Antônio</span></td>
+                        <td>12:40</td>
+                        <td>No Horário</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Universitário / Centro</strong> via Botafogo</td>
+                        <td><span class="tag tag-bento-transportes">Bento Transportes</span></td>
+                        <td>12:55</td>
+                        <td>No Horário</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cohab / Licorsul</strong></td>
+                        <td><span class="tag tag-santo-antonio">Viação Santo Antônio</span></td>
+                        <td>13:10</td>
+                        <td>Atraso 5 min</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="media-section" id="rotas">
+            <h2>Cobertura das Rotas Municipais</h2>
+            <p>Conectando os principais polos residenciais, turísticos e industriais de Bento Gonçalves.</p>
+            <img src="onibus-bento.jpg" alt="Transporte público em operação em Bento Gonçalves">
+        </section>
+    </main>
+
+    <footer>
+        <p>Centralizando a Mobilidade Urbana Municipal.</p>
+    </footer>
+
+    <a href="#topo" class="back-to-top" title="Voltar ao início" aria-label="Voltar ao início">↑</a>
+
+</body>
+</html>
