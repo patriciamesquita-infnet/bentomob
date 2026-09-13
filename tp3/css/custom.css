@@ -1,0 +1,379 @@
+/* ==========================================================================
+   BENTOMOB - ESTILOS E TOKENS (TP3 BOOTSTRAP 5.3)
+   ========================================================================== */
+
+:root {
+    --color-primary: #581845;
+    --color-primary-hover: #451336;
+    --color-secondary: #7b1e58;
+    --color-secondary-hover: #631746;
+    --color-bg: #f3ebf2;
+    --color-surface: #ffffff;
+    --color-text-main: #2b232a;
+    --color-text-muted: #6a5a67;
+    --color-border: #ebdbe7;
+    --color-input-border: #d4c2d0;
+
+    /* Operadora Santo Antônio (Amarelo / Azul Marinho) */
+    --color-sto-text: #10386e;
+    --color-sto-bg: #fff3bf;
+    --color-sto-border: #ffd43b;
+
+    /* Operadora Bento Transportes (Bordô / Vermelho Rubi Oficial) */
+    --color-bento-text: #990000;
+    --color-bento-bg: #ffffff;
+    --color-bento-border: #990000;
+    --color-bento-btn: #8a0000;
+    --color-bento-btn-hover: #6e0000;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Marca e Cabeçalho */
+.logo-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-primary) !important;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo-brand span {
+    color: var(--color-secondary);
+}
+
+.border-bottom-primary {
+    border-bottom: 3px solid var(--color-primary);
+}
+
+.custom-nav-link {
+    color: var(--color-text-muted) !important;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.custom-nav-link:hover,
+.custom-nav-link.active {
+    color: var(--color-secondary) !important;
+}
+
+/* Botão Perfil */
+.btn-profile {
+    background-color: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.btn-profile:hover,
+.btn-profile.active {
+    background-color: #e5d3e2;
+    border-color: var(--color-secondary);
+}
+
+.avatar-emoji {
+    font-size: 1.15rem;
+    line-height: 1;
+    filter: sepia(100%) hue-rotate(280deg) saturate(300%);
+}
+
+/* Cards e Contêineres */
+.card-bentomob {
+    background-color: var(--color-surface);
+    border-radius: 18px !important;
+    border: 1px solid var(--color-border);
+    border-top: 6px solid var(--color-primary) !important;
+    box-shadow: 0 8px 24px rgba(88, 24, 69, 0.08);
+}
+
+.text-primary-custom {
+    color: var(--color-primary) !important;
+}
+
+.text-secondary-custom {
+    color: var(--color-secondary) !important;
+}
+
+.bg-light-purple {
+    background-color: #ede2ec;
+}
+
+.bg-light-card {
+    background-color: #faf5f9;
+}
+
+/* Botões */
+.btn-primary-custom {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #ffffff;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.search-btn {
+    right: 7px;
+    top: 6px;
+    bottom: 6px;
+    padding: 0 1.6rem;
+}
+
+.custom-input {
+    background-color: #faf5f9;
+    border: 2px solid var(--color-input-border);
+    border-radius: 12px;
+}
+
+.custom-input:focus {
+    background-color: #ffffff;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(123, 30, 88, 0.12);
+}
+
+/* Tags de Operadoras */
+.tag-operator {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.tag-santo-antonio {
+    background-color: var(--color-sto-bg);
+    color: var(--color-sto-text);
+    border: 1.5px solid var(--color-sto-border);
+}
+
+.tag-bento-transportes {
+    background-color: var(--color-bento-bg);
+    color: var(--color-bento-text);
+    border: 1.5px solid var(--color-bento-border);
+}
+
+.btn-warning-custom {
+    background-color: #ffd43b;
+    color: #10386e;
+    border: 1px solid #fab005;
+}
+
+.btn-warning-custom:hover {
+    background-color: #fcc419;
+    color: #10386e;
+}
+
+.btn-danger-bento {
+    background-color: var(--color-bento-btn);
+    color: #ffffff;
+    border: 1px solid #700000;
+}
+
+.btn-danger-bento:hover {
+    background-color: var(--color-bento-btn-hover);
+    color: #ffffff;
+}
+
+/* Botão Favoritar */
+.btn-fav {
+    background: none;
+    border: none;
+    color: #c4b5c1;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 2px 6px;
+    transition: transform 0.15s, color 0.15s;
+    vertical-align: middle;
+}
+
+.btn-fav:hover {
+    transform: scale(1.2);
+    color: #ffc107;
+}
+
+.btn-fav.active {
+    color: #ffc107 !important;
+}
+
+/* ==========================================================================
+   CUSTOMIZAÇÃO DAS ABAS (NAV-PILLS) SEM AZUL DO BOOTSTRAP
+   ========================================================================== */
+.custom-pills .nav-link {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Aba 1: Todas as Linhas (Off: Branco | On: Bordô) */
+.pill-todas {
+    background-color: #ffffff !important;
+    color: var(--color-primary) !important;
+    border: 1.5px solid var(--color-border) !important;
+}
+
+.pill-todas.active {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+    border-color: var(--color-primary) !important;
+}
+
+/* Aba 2: Viação Santo Antônio (Amarelo e Azul Marinho) */
+.pill-sto {
+    background-color: var(--color-sto-bg) !important;
+    color: var(--color-sto-text) !important;
+    border: 1.5px solid var(--color-sto-border) !important;
+}
+
+.pill-sto.active,
+.pill-sto:hover {
+    background-color: #ffd43b !important;
+    color: var(--color-sto-text) !important;
+    border-color: #fab005 !important;
+    box-shadow: 0 4px 12px rgba(255, 212, 59, 0.35);
+}
+
+/* Aba 3: Bento Transportes (Branco e Bordô Rubi) */
+.pill-bento {
+    background-color: var(--color-bento-bg) !important;
+    color: var(--color-bento-text) !important;
+    border: 1.5px solid var(--color-bento-border) !important;
+}
+
+.pill-bento.active,
+.pill-bento:hover {
+    background-color: var(--color-bento-btn) !important;
+    color: #ffffff !important;
+    border-color: #700000 !important;
+    box-shadow: 0 4px 12px rgba(153, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+   CARD DE VÍDEO COM LINK DIRETO PARA O YOUTUBE
+   ========================================================================== */
+.video-link-card {
+    border: 2px solid var(--color-border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.video-link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(88, 24, 69, 0.18) !important;
+    border-color: #ff0000;
+}
+
+.bg-dark-overlay {
+    background-color: rgba(20, 10, 18, 0.35);
+    transition: background-color 0.25s ease;
+}
+
+.video-link-card:hover .bg-dark-overlay {
+    background-color: rgba(20, 10, 18, 0.2);
+}
+
+.video-thumb-img {
+    transition: transform 0.3s ease;
+}
+
+.video-link-card:hover .video-thumb-img {
+    transform: scale(1.03);
+}
+
+/* Botão Vermelho do YouTube */
+.youtube-play-btn {
+    width: 84px;
+    height: 60px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 18px;
+    font-size: 2.6rem;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease;
+}
+
+.video-link-card:hover .youtube-play-btn {
+    transform: scale(1.15);
+    background-color: #cc0000;
+}
+
+/* Alertas e Tabelas */
+.border-start-warning {
+    border-left: 6px solid #fd7e14 !important;
+    background-color: #fff4e6;
+    color: #7a2700;
+}
+
+.custom-table thead th {
+    background-color: #f8edf6;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+}
+
+.custom-table tbody td,
+.custom-table tbody th {
+    padding: 1rem;
+    border-bottom: 1px solid #f1e6ef;
+}
+
+/* Rodapé e Voltar ao Topo */
+.footer-custom {
+    background-color: #380b2b;
+    color: #f7ebf5;
+}
+
+.btn-back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--color-secondary);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    z-index: 1050;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-back-to-top:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transform: translateY(-4px);
+}
+
+@media (max-width: 576px) {
+    .search-btn {
+        position: static !important;
+        width: 100%;
+        margin-top: 0.6rem;
+        padding: 0.85rem;
+    }
+}

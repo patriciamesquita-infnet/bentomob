@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BentoMob - Rotas e Mapa Interativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body id="topo">
+
+    <!-- CABEÇALHO -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-white border-bottom-primary shadow-sm" aria-label="Navegação Principal">
+            <div class="container">
+                <a class="navbar-brand logo-brand" href="index.html">Bento<span>Mob</span></a>
+
+                <div class="d-flex align-items-center gap-2 order-lg-3">
+                    <a href="perfil.html" class="btn-profile" title="Meu Perfil" aria-label="Acessar Perfil de Passageiro">
+                        <span class="avatar-emoji">👤</span>
+                    </a>
+                    <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacao" aria-controls="menuNavegacao" aria-expanded="false" aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="menuNavegacao">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3 text-center">
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="linhas.html">Linhas e Horários</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link active" href="rotas.html">Rotas e Mapa</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="passagens.html">Passagens</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4 py-lg-5">
+
+        <!-- 1. CARD DE COBERTURA COM IMAGEM (TRANSFERIDO PARA CÁ) -->
+        <section class="card card-bentomob p-4 mb-4">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-lg-6">
+                    <h1 class="h3 fw-bold text-primary-custom mb-2">Cobertura das Rotas Municipais</h1>
+                    <p class="text-muted mb-3">Conectando os polos residenciais, industriais e de ensino de Bento Gonçalves através de itinerários integrados das concessionárias municipais.</p>
+                    <p class="small text-muted mb-0"><i class="bi bi-info-circle text-primary-custom me-1"></i>Acompanhe as paradas estratégicas e os principais pontos de transbordo no mapa abaixo.</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <img src="img/onibus-bento.jpg" alt="Ônibus das operadoras municipais em operação em Bento Gonçalves" class="img-fluid rounded-4 shadow-sm w-100 object-fit-cover" style="max-height: 280px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. MAPA INTERATIVO DO GOOGLE MAPS -->
+        <section class="card card-bentomob p-4 mb-4">
+            <h2 class="h4 fw-bold text-primary-custom mb-2">Mapa de Paradas e Terminal Central</h2>
+            <p class="text-muted mb-4">Localização das paradas oficiais e vias de circulação rápida no Centro e bairros adjacentes.</p>
+
+            <!-- MÍDIA EXTERNA 2: MAPA INTERATIVO DO GOOGLE MAPS -->
+            <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow-sm mb-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13963.858712128892!2d-51.524227899999994!3d-29.1672322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c3cad545ca80f%3A0x6b63d7675f92ff5e!2sBento%20Gon%C3%A7alves%2C%20RS!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" title="Mapa Interativo dos Terminais de Bento Gonçalves" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-12 col-md-4">
+                    <div class="p-3 bg-light-card border rounded-3 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h3 class="h6 fw-bold text-primary-custom mb-0"><i class="bi bi-geo-alt-fill text-danger me-1"></i>Terminal Central</h3>
+                                <button class="btn-fav active" title="Favoritar Ponto">★</button>
+                            </div>
+                            <span class="small text-muted d-block mb-2">Rua Saldanha Marinho</span>
+                            <p class="small text-muted mb-0">Principal ponto de conexão e transbordo unificado entre todas as linhas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="p-3 bg-light-card border rounded-3 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h3 class="h6 fw-bold text-primary-custom mb-0"><i class="bi bi-geo-alt-fill text-danger me-1"></i>Ponto São Bento</h3>
+                                <button class="btn-fav" title="Favoritar Ponto">★</button>
+                            </div>
+                            <span class="small text-muted d-block mb-2">Igreja Redonda</span>
+                            <p class="small text-muted mb-0">Parada de conexão direta para as linhas Borgo, Fátima e Fenavinho.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="p-3 bg-light-card border rounded-3 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h3 class="h6 fw-bold text-primary-custom mb-0"><i class="bi bi-geo-alt-fill text-danger me-1"></i>Ponto Cidade Alta</h3>
+                                <button class="btn-fav" title="Favoritar Ponto">★</button>
+                            </div>
+                            <span class="small text-muted d-block mb-2">Entorno da Rodoviária</span>
+                            <p class="small text-muted mb-0">Integração com linhas interdistritais e transporte intermunicipal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer-custom py-4 mt-auto text-center">
+        <div class="container">
+            <p class="mb-0 fw-semibold">Centralizando a Mobilidade Urbana Municipal.</p>
+        </div>
+    </footer>
+
+    <a href="#topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="btn-back-to-top shadow" title="Voltar ao início" aria-label="Voltar ao início">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.btn-fav').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BentoMob - Início (TP3)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body id="topo">
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-white border-bottom-primary shadow-sm" aria-label="Navegação Principal">
+            <div class="container">
+                <a class="navbar-brand logo-brand" href="index.html">Bento<span>Mob</span></a>
+
+                <div class="d-flex align-items-center gap-2 order-lg-3">
+                    <a href="perfil.html" class="btn-profile" title="Meu Perfil" aria-label="Acessar Perfil de Passageiro">
+                        <span class="avatar-emoji">👤</span>
+                    </a>
+                    <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacao" aria-controls="menuNavegacao" aria-expanded="false" aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="menuNavegacao">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3 text-center">
+                        <li class="nav-item"><a class="nav-link custom-nav-link active" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="linhas.html">Linhas e Horários</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="rotas.html">Rotas e Mapa</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="passagens.html">Passagens</a></li>
+                        <li class="nav-item"><a class="nav-link custom-nav-link" href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4 py-lg-5">
+
+        <section class="card card-bentomob p-4 p-md-5 mb-4 text-center" id="busca">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <h1 class="fw-bold text-primary-custom mb-2 display-6">Qual seu destino de hoje?</h1>
+                    <p class="text-muted mb-4 fs-6">Consulte horários e rotas unificadas da Viação Santo Antônio e Bento Transportes.</p>
+                    
+                    <form action="linhas.html" method="GET" class="position-relative mx-auto">
+                        <label for="busca-home" class="visually-hidden">Digite bairro, linha ou destino</label>
+                        <input type="text" id="busca-home" name="q" class="form-control form-control-lg rounded-pill custom-input pe-5" placeholder="Digite o bairro, linha ou destino...">
+                        <button type="submit" class="btn btn-primary-custom rounded-pill position-absolute search-btn" aria-label="Buscar linha">
+                            <i class="bi bi-search me-1"></i> Buscar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="alert alert-warning border-start-warning d-flex align-items-start gap-3 shadow-sm mb-4" role="alert" aria-live="polite">
+            <i class="bi bi-exclamation-triangle-fill fs-3 flex-shrink-0 text-warning"></i>
+            <div>
+                <h2 class="h5 alert-heading fw-bold mb-1">Alerta Operacional em Tempo Real</h2>
+                <p class="mb-0 small">Linhas com trajeto pelo Bairro São Roque operam com desvio momentâneo na Rua Coberta devido a obras viárias.</p>
+            </div>
+        </section>
+
+        <section class="card card-bentomob p-4 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h4 fw-bold text-primary-custom mb-0">Próximas Saídas Integradas</h2>
+                <span class="badge bg-light-purple text-primary-custom fw-bold px-3 py-2 rounded-pill">Horário Oficial</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0 custom-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Itinerário</th>
+                            <th scope="col">Operadora</th>
+                            <th scope="col">Saída Prevista</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="fw-bold">São Roque / Centro <span class="text-muted fw-normal d-block small">via Borgo</span></th>
+                            <td><span class="tag-operator tag-santo-antonio">Santo Antônio</span></td>
+                            <td class="fw-semibold">12:40</td>
+                            <td><span class="text-success fw-bold"><i class="bi bi-check-circle me-1"></i>No Horário</span></td>
+                            <td><a href="contato.html" class="text-decoration-none text-secondary-custom fw-semibold small">Reportar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-bold">Universitário / Centro <span class="text-muted fw-normal d-block small">via Botafogo</span></th>
+                            <td><span class="tag-operator tag-bento-transportes">Bento Transportes</span></td>
+                            <td class="fw-semibold">12:55</td>
+                            <td><span class="text-success fw-bold"><i class="bi bi-check-circle me-1"></i>No Horário</span></td>
+                            <td><a href="contato.html" class="text-decoration-none text-secondary-custom fw-semibold small">Reportar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-bold">Cohab / Licorsul <span class="text-muted fw-normal d-block small">via Planalto</span></th>
+                            <td><span class="tag-operator tag-santo-antonio">Santo Antônio</span></td>
+                            <td class="fw-semibold">13:10</td>
+                            <td><span class="text-danger fw-bold"><i class="bi bi-clock-history me-1"></i>Atraso 5 min</span></td>
+                            <td><a href="contato.html" class="text-decoration-none text-secondary-custom fw-semibold small">Reportar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-end mt-3">
+                <a href="linhas.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">Ver Todas as Linhas Digitalizadas →</a>
+            </div>
+        </section>
+
+        <section class="card card-bentomob p-4 mb-4">
+            <h2 class="h4 fw-bold text-primary-custom mb-2">Aprenda a Usar a Plataforma BentoMob</h2>
+            <p class="text-muted mb-4">Acompanhe no vídeo como consultar itinerários, favoritar suas linhas diárias e acompanhar alertas sem baixar arquivos.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <a href="https://youtu.be/yIPvmnCsTmA" target="_blank" rel="noopener noreferrer" class="d-block text-decoration-none video-link-card shadow-sm rounded-4 overflow-hidden position-relative">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/capa-video.jpg" alt="Tutorial em Vídeo BentoMob" class="w-100 h-100 object-fit-cover video-thumb-img">
+                            
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center bg-dark-overlay">
+                                <div class="youtube-play-btn shadow-lg d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-youtube"></i>
+                                </div>
+                                <span class="badge bg-dark bg-opacity-75 text-white mt-3 px-3 py-2 rounded-pill fs-6 fw-semibold">
+                                    Assistir no YouTube <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="card card-bentomob p-4 p-md-5 mb-4">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-8">
+                    <h2 class="h4 fw-bold text-primary-custom mb-3">Sobre a Plataforma BentoMob</h2>
+                    <p class="text-muted mb-3">O <strong>BentoMob</strong> é uma iniciativa projetada para superar a fragmentação histórica da mobilidade urbana em Bento Gonçalves. Em vez de consultar grades dispersas em arquivos PDF ou navegar em portais separados, os cidadãos acessam itinerários unificados, previsões de trânsito e links diretos de bilhetagem em um único ambiente digital e responsivo.</p>
+                    <p class="text-muted mb-0 small"><i class="bi bi-shield-check text-success me-2"></i>Informações sincronizadas com a tabela de horários de 2026 das operadoras municipais.</p>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <div class="bg-light-purple p-4 rounded-4">
+                        <i class="bi bi-bus-front fs-1 text-secondary-custom mb-2 d-block"></i>
+                        <span class="fw-bold d-block text-primary-custom">2 Concessionárias</span>
+                        <span class="small text-muted">100% das Linhas Locais</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-custom py-4 mt-auto text-center">
+        <div class="container">
+            <p class="mb-0 fw-semibold">Centralizando a Mobilidade Urbana Municipal.</p>
+        </div>
+    </footer>
+
+    <a href="#topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="btn-back-to-top shadow" title="Voltar ao início" aria-label="Voltar ao início">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
